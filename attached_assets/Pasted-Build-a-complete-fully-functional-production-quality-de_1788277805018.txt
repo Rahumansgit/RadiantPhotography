@@ -1,0 +1,1221 @@
+Build a **complete, fully functional, production-quality demo website/web application** for a premium photography studio named **“Radiant Photography”**.
+
+This is NOT just a visual mockup and NOT just a single landing page.
+
+Create the complete multi-page website with working navigation, interactions, filtering, lightbox, booking form, responsive layouts, animations, mobile navigation and all necessary UI states.
+
+The website will initially be used as a **high-quality demo for a real photography studio client**, so it should look polished enough to present directly to a client. The content, images, contact information and branding should be easy to replace later.
+
+---
+
+# TECH STACK — STRICT REQUIREMENTS
+
+Use:
+
+* **Vite**
+* **React**
+* **JavaScript**
+* **JSX**
+* **Tailwind CSS**
+* **GSAP**
+* **Motion for React**
+
+IMPORTANT:
+
+* React components MUST use `.jsx`
+* Do NOT use TypeScript
+* Do NOT create `.tsx` files
+* Do NOT use TypeScript syntax
+* Use `.js` only where genuinely necessary for configuration/data/utilities
+* Use `.css` only where Tailwind cannot reasonably handle the requirement
+* Do not create unnecessary CSS files
+* Keep the code clean, modular and production-oriented
+
+Use React Router for page navigation.
+
+Suggested routes:
+
+/
+/portfolio
+/services
+/about
+/book
+
+---
+
+# ANIMATION ARCHITECTURE
+
+Use the two animation libraries intentionally.
+
+## GSAP
+
+Use **GSAP + ScrollTrigger** for cinematic, page-level and scroll-driven animations.
+
+Official reference:
+https://gsap.com/
+
+Use GSAP for:
+
+* Hero image reveal
+* Hero typography entrance
+* Image clip/reveal animations
+* Scroll-triggered section reveals
+* Parallax photography
+* Large image scale transitions
+* Pinned storytelling sections
+* Portfolio image choreography
+* Editorial text reveals
+* Section transitions
+* Cinematic page entrance sequences
+
+GSAP animations should feel slow, elegant and cinematic.
+
+Do NOT animate every element.
+
+---
+
+## Motion
+
+Use **Motion for React** for interactive UI elements.
+
+Official reference:
+https://motion.dev/
+
+Use Motion for:
+
+* Mobile navigation
+* Menu open/close
+* Buttons
+* Hover interactions
+* Portfolio filtering transitions
+* Lightbox open/close
+* Image transitions
+* Modal animations
+* Form interactions
+* Accordion interactions
+* Page/component transitions
+* Subtle micro-interactions
+* Layout transitions
+* Active navigation states
+
+Do not use GSAP and Motion for the exact same animation unnecessarily.
+
+GSAP = cinematic storytelling / scroll animation.
+
+Motion = UI interaction / component animation.
+
+---
+
+# DESIGN DIRECTION
+
+The website must feel like:
+
+**Luxury photography studio**
++
+**Editorial fashion magazine**
++
+**Cinematic portfolio**
++
+**Modern premium web experience**
+
+It must NOT feel like:
+
+* Generic photography template
+* SaaS website
+* Corporate website
+* AI-generated template
+* Card-heavy dashboard
+* Excessively animated website
+* Generic contact-page website
+
+The photographs must always be the primary visual focus.
+
+Use:
+
+* Large photography
+* Editorial layouts
+* Generous whitespace
+* Sophisticated typography
+* Asymmetric compositions
+* Strong visual hierarchy
+* Minimal UI
+* Premium spacing
+* Cinematic transitions
+* Elegant typography
+
+Avoid excessive:
+
+* Cards
+* Icons
+* Gradients
+* Glows
+* Shadows
+* Pills
+* Borders
+* Decorative elements
+
+Every design element should have a purpose.
+
+---
+
+# BRAND
+
+Studio name:
+
+**Radiant Photography**
+
+Tagline:
+
+**Bringing Colours to Life**
+
+Photography categories:
+
+* Wedding
+* Maternity
+* Kids
+* Models / Fashion
+
+Do not invent fake business statistics such as:
+
+“500+ clients”
+“10+ years experience”
+“award winning”
+etc.
+
+unless explicitly marked as placeholder content.
+
+Use realistic placeholder content that can easily be replaced by the actual client.
+
+---
+
+# LUXURY COLOR SYSTEM
+
+Use this palette:
+
+### Warm Ivory
+
+#F5F0E8
+
+### Soft Champagne
+
+#E8DED0
+
+### Deep Espresso
+
+#171412
+
+### Warm Taupe
+
+#756A60
+
+### Muted Gold
+
+#B89B6A
+
+### Rich Charcoal
+
+#1C1A18
+
+The primary visual language should be:
+
+**warm ivory + espresso/charcoal + subtle muted gold**
+
+Do NOT use bright yellow gold.
+
+Gold should be used very sparingly for:
+
+* Fine dividers
+* Small accents
+* Active states
+* Tiny decorative details
+* Hover states
+* Selected navigation indicators
+
+Do NOT turn the website into a gold-colored luxury template.
+
+Use alternating light and dark sections to create visual rhythm.
+
+---
+
+# TYPOGRAPHY
+
+Use **Bezoria** as the luxury editorial serif font.
+
+Use it selectively.
+
+Bezoria should be used for:
+
+* Hero headline
+* Major section headings
+* Photography category titles
+* Large editorial statements
+* Important short quotes
+* Large visual typography
+
+Do NOT use Bezoria for:
+
+* Navigation
+* Paragraphs
+* Forms
+* Buttons
+* Captions
+* Labels
+* Footer
+* Dense information
+
+Pair it with **Manrope** or another excellent modern sans-serif.
+
+Use the sans-serif for:
+
+* Navigation
+* Body text
+* Buttons
+* Forms
+* Labels
+* Captions
+* Metadata
+* Footer
+* Functional UI
+
+Typography should create a clear:
+
+**luxury editorial heading**
++
+**clean modern readable body**
+
+hierarchy.
+
+Do NOT overuse the luxury serif.
+
+---
+
+# GLOBAL NAVIGATION
+
+Create a consistent navigation across all pages.
+
+Desktop:
+
+Logo:
+
+**Radiant Photography**
+
+Navigation:
+
+Home
+Portfolio
+Services
+About
+Book Us
+
+Include a strong but elegant:
+
+**Book Us**
+
+CTA.
+
+The navbar should:
+
+* Be transparent/overlay on the hero when appropriate
+* Transition to a refined solid/blurred background after scrolling
+* Have subtle active-page indication
+* Use Motion for transitions
+
+Mobile:
+
+* Hamburger menu
+* Full-screen or elegant overlay menu
+* Smooth Motion entrance/exit
+* Large readable navigation
+* Book Us CTA
+
+---
+
+# PAGE 1 — HOME
+
+Route:
+
+`/`
+
+Create a cinematic full-screen hero.
+
+Hero content:
+
+**Radiant Photography**
+
+**Bringing Colours to Life**
+
+Wedding • Maternity • Kids • Models
+
+CTA:
+
+**Explore Our Work**
+
+Secondary CTA:
+
+**Book Us**
+
+The hero photography should occupy most of the viewport.
+
+Do not overload the hero with text.
+
+Use GSAP for:
+
+* Image reveal
+* Typography reveal
+* Subtle image movement
+* Scroll indicator
+
+---
+
+## HOME — SECTION: STORIES WORTH REMEMBERING
+
+Heading:
+
+**Stories Worth Remembering**
+
+Short editorial description.
+
+Create a large asymmetric photography composition.
+
+Use large photographs rather than cards.
+
+Include a CTA:
+
+**View Portfolio**
+
+---
+
+# HOME — SECTION: SPECIALITIES
+
+Heading:
+
+**Our Specialities**
+
+Create four photography categories:
+
+### Wedding
+
+Capture the emotions, details and unforgettable moments.
+
+### Maternity
+
+Elegant portraits celebrating motherhood.
+
+### Kids
+
+Natural, joyful and expressive moments.
+
+### Models
+
+Editorial and fashion-focused photography.
+
+IMPORTANT:
+
+Do NOT present these as four generic icon cards.
+
+Use large image-led editorial sections.
+
+Alternate image/text positioning.
+
+Use subtle GSAP reveal animations.
+
+---
+
+# HOME — SECTION: BEHIND THE LENS
+
+Heading:
+
+**Behind the Lens**
+
+Create an editorial image + text layout.
+
+Keep the copy concise.
+
+Communicate:
+
+* Creativity
+* Emotion
+* Attention to detail
+* Professional approach
+* Personalized photography experience
+
+CTA:
+
+**Our Story**
+
+---
+
+# HOME — SELECTED WORK
+
+Create a large editorial portfolio preview.
+
+Show several large photographs.
+
+Do NOT use tiny thumbnails.
+
+Use different image proportions:
+
+* Landscape
+* Portrait
+* Square
+* Wide
+
+Use subtle Motion hover interactions.
+
+CTA:
+
+**Explore Full Portfolio**
+
+---
+
+# HOME — TESTIMONIALS
+
+Create an elegant testimonial section.
+
+Use large serif quotation typography.
+
+Example placeholder:
+
+“Every photograph brought the moment back to life. The entire experience felt personal and effortless.”
+
+Show:
+
+Client Name
+Photography Category
+
+Do not invent unrealistic reviews or names as real clients.
+
+Clearly structure them as replaceable demo content.
+
+---
+
+# HOME — FINAL CTA
+
+Create a strong dark section.
+
+Heading:
+
+**Let's Create Something Beautiful.**
+
+Short description.
+
+CTA:
+
+**Book Us**
+
+Use a large background photograph with subtle overlay.
+
+---
+
+# PAGE 2 — PORTFOLIO
+
+Route:
+
+`/portfolio`
+
+This should be one of the strongest pages.
+
+Heading:
+
+**Selected Works**
+
+Subheading:
+
+**A collection of stories, moments and portraits captured through our lens.**
+
+---
+
+## CATEGORY FILTER
+
+Create:
+
+ALL
+WEDDING
+MATERNITY
+KIDS
+MODELS
+
+Use minimal editorial typography.
+
+Do NOT use generic rounded pill buttons.
+
+Selected category should have:
+
+* Subtle underline
+* Muted gold accent
+* Smooth Motion transition
+
+---
+
+# PORTFOLIO GALLERY
+
+Create a premium asymmetric editorial gallery.
+
+Do NOT create a standard 3-column grid.
+
+Use varying image sizes and compositions.
+
+Example:
+
+Large portrait
+Two smaller images
+Large landscape
+Full-width image
+Two portraits
+Large editorial image
+
+The photographs should be large enough to immediately communicate quality.
+
+Use a local data array for portfolio items so new images/categories can easily be added later.
+
+Each portfolio item should have:
+
+* Image
+* Category
+* Title
+* Optional caption
+
+---
+
+# PORTFOLIO LIGHTBOX
+
+Clicking an image should open a premium lightbox.
+
+Lightbox must include:
+
+* Large image
+* Close button
+* Previous
+* Next
+* Category
+* Image title
+* Optional caption
+
+Use Motion for:
+
+* Open animation
+* Close animation
+* Image transition
+* Previous/next transition
+
+Allow:
+
+* Escape to close
+* Arrow navigation
+* Clicking backdrop to close
+
+On mobile, make the lightbox touch-friendly.
+
+---
+
+# PAGE 3 — SERVICES
+
+Route:
+
+`/services`
+
+Heading:
+
+**Curated Experiences**
+
+Subheading:
+
+**Photography created around your story, your style and your moment.**
+
+Create FOUR complete services.
+
+---
+
+## 01 — WEDDING PHOTOGRAPHY
+
+Large image.
+
+Short editorial description.
+
+Include concise highlights:
+
+* Wedding day coverage
+* Candid moments
+* Couple portraits
+* Details & decor
+* Professional editing
+
+CTA:
+
+**Book Wedding Photography**
+
+---
+
+## 02 — MATERNITY PHOTOGRAPHY
+
+Large image.
+
+Include:
+
+* Studio / outdoor sessions
+* Individual portraits
+* Couple/family portraits
+* Creative direction
+* Professional editing
+
+CTA:
+
+**Book Maternity Session**
+
+---
+
+## 03 — KIDS PHOTOGRAPHY
+
+Large image.
+
+Include:
+
+* Portrait sessions
+* Natural expressions
+* Family moments
+* Creative setups
+* Professional editing
+
+CTA:
+
+**Book Kids Session**
+
+---
+
+## 04 — MODELS / FASHION PHOTOGRAPHY
+
+THIS SERVICE MUST NOT BE OMITTED.
+
+Include:
+
+* Editorial portraits
+* Fashion shoots
+* Portfolio creation
+* Creative direction
+* Studio/outdoor concepts
+
+CTA:
+
+**Book Model Shoot**
+
+---
+
+Use alternating layouts:
+
+Image + text
+Text + image
+Image + text
+Text + image
+
+Use large photography.
+
+Avoid card grids.
+
+---
+
+# PAGE 4 — ABOUT
+
+Route:
+
+`/about`
+
+Heading:
+
+**Behind the Lens**
+
+Create a premium editorial About page.
+
+Include:
+
+## Our Story
+
+Short studio story.
+
+## Our Philosophy
+
+Focus on:
+
+* Emotion
+* Authenticity
+* Light
+* Composition
+* Storytelling
+
+## Our Approach
+
+Explain the photography experience from planning to final delivery.
+
+Use a combination of:
+
+* Large photography
+* Editorial typography
+* Short paragraphs
+* Pull quotes
+
+---
+
+# PHOTOGRAPHER / TEAM SECTION
+
+Create:
+
+**Meet the Photographer**
+
+Use a large portrait.
+
+Include:
+
+Name
+Role
+Short biography
+Photography specialties
+
+Use placeholder data that is obviously easy to replace.
+
+Do NOT invent fake achievements.
+
+---
+
+# PAGE 5 — BOOK US
+
+Route:
+
+`/book`
+
+THIS IS NOT A CONTACT PAGE.
+
+The page must be called:
+
+**Book Us**
+
+Heading:
+
+**Let's Create Something Beautiful.**
+
+Subheading:
+
+Tell us about your vision and we'll get back to you to plan your session.
+
+---
+
+# BOOKING FORM
+
+Create a premium, functional form.
+
+## Personal Information
+
+Full Name *
+Phone / WhatsApp *
+Email
+
+## Photography Service
+
+Wedding
+Maternity
+Kids
+Models
+
+Use elegant selectable options instead of an ugly generic dropdown where practical.
+
+## Shoot Details
+
+Preferred Date *
+Location
+Number of People
+Type of Shoot
+
+## Additional Information
+
+Tell us about your requirements.
+
+Textarea.
+
+---
+
+# CONDITIONAL WEDDING FIELDS
+
+If the user selects Wedding, dynamically reveal:
+
+Wedding Date
+Venue
+Event Type
+Number of Functions
+
+Animate the fields using Motion.
+
+---
+
+# FORM VALIDATION
+
+Implement client-side validation.
+
+Required:
+
+* Full Name
+* Phone / WhatsApp
+* Preferred Date
+* Photography Service
+
+Show clear inline validation messages.
+
+Do not use browser-default ugly alerts.
+
+---
+
+# FORM SUBMISSION
+
+For this demo, no backend is required.
+
+On successful validation:
+
+Show an elegant success state:
+
+**Thank you for reaching out.**
+
+**Your booking request has been received. We'll get back to you shortly.**
+
+Include:
+
+**Back to Home**
+
+Do not pretend that the form actually sends email unless a backend/service is connected.
+
+Structure the form so a real API/Formspree/email service can be connected later.
+
+---
+
+# FOOTER
+
+Create a premium minimal footer.
+
+Include:
+
+Radiant Photography
+
+Short studio description.
+
+Links:
+
+Home
+Portfolio
+Services
+About
+Book Us
+
+Social:
+
+Instagram
+Facebook
+WhatsApp
+
+Contact placeholders:
+
+Phone
+Email
+Location
+
+Final statement:
+
+**Your story deserves to be remembered beautifully.**
+
+---
+
+# RESPONSIVE DESIGN
+
+This is extremely important.
+
+The site must be genuinely responsive.
+
+Design specifically for:
+
+* Mobile
+* Tablet
+* Laptop
+* Desktop
+* Large desktop
+
+Do NOT simply shrink the desktop design.
+
+---
+
+# MOBILE
+
+On mobile:
+
+* Clean hamburger navigation
+* Large photography
+* Proper typography scaling
+* No horizontal overflow
+* Touch-friendly buttons
+* Touch-friendly gallery
+* Mobile lightbox
+* Proper booking form layout
+* Proper spacing
+* Optimized animation performance
+
+Images should remain visually impactful even on small screens.
+
+---
+
+# ACCESSIBILITY
+
+Implement:
+
+* Semantic HTML
+* Proper heading hierarchy
+* Alt text for images
+* Keyboard navigation
+* Focus states
+* Accessible buttons
+* Accessible form labels
+* Escape-to-close lightbox
+* Reduced-motion consideration
+
+Respect:
+
+`prefers-reduced-motion`
+
+When reduced motion is enabled, significantly reduce or disable non-essential animations.
+
+---
+
+# PERFORMANCE
+
+Do not sacrifice performance for visual effects.
+
+Use:
+
+* Lazy loading for non-hero images
+* Proper image sizing
+* Efficient React rendering
+* Avoid unnecessary animation listeners
+* Cleanup GSAP ScrollTriggers when components unmount
+* Avoid excessive DOM elements
+* Avoid animation of expensive properties where possible
+
+Animations should remain smooth.
+
+---
+
+# COMPONENT ARCHITECTURE
+
+Create reusable React components.
+
+Suggested structure:
+
+src/
+components/
+Navbar.jsx
+Footer.jsx
+Button.jsx
+SectionHeading.jsx
+ImageReveal.jsx
+PortfolioGrid.jsx
+PortfolioFilter.jsx
+Lightbox.jsx
+ServiceSection.jsx
+Testimonial.jsx
+BookingForm.jsx
+PageTransition.jsx
+
+pages/
+Home.jsx
+Portfolio.jsx
+Services.jsx
+About.jsx
+BookUs.jsx
+
+data/
+portfolio.js
+services.js
+testimonials.js
+
+hooks/
+useGsap.js
+
+App.jsx
+main.jsx
+
+Adapt the structure if necessary, but keep the code modular.
+
+---
+
+# DATA-DRIVEN CONTENT
+
+Do not hardcode every portfolio card directly into the JSX.
+
+Create structured data for:
+
+* Portfolio
+* Services
+* Testimonials
+* Navigation
+
+This will make it easy to replace demo content later.
+
+---
+
+# IMAGE HANDLING
+
+Use high-quality photography placeholders suitable for:
+
+* Weddings
+* Maternity
+* Kids
+* Fashion/models
+* Portraits
+* Interiors/studio
+
+The image selection should match the luxury aesthetic.
+
+Avoid obviously generic corporate stock photography.
+
+Make it easy to replace all images later.
+
+Do not use images containing watermarks or logos.
+
+---
+
+# MICRO-INTERACTIONS
+
+Use subtle interactions such as:
+
+* Image hover scale
+* Underline animation
+* Button hover movement
+* Navigation active indicator
+* Smooth filter transition
+* Lightbox transitions
+* Form focus transitions
+* Menu transitions
+
+Avoid:
+
+* Excessive glowing
+* Bouncing buttons
+* Spinning icons
+* Constant floating elements
+* Random particles
+* Excessive cursor effects
+
+The experience should feel sophisticated, not flashy.
+
+---
+
+# PAGE TRANSITIONS
+
+Create subtle transitions between routes.
+
+Use Motion for React.
+
+Keep them short and elegant.
+
+Do not create long loading screens.
+
+---
+
+# SEO BASICS
+
+Implement basic page metadata where practical:
+
+Home:
+Radiant Photography — Luxury Wedding, Maternity, Kids & Model Photography
+
+Portfolio:
+Portfolio — Radiant Photography
+
+Services:
+Photography Services — Radiant Photography
+
+About:
+About — Radiant Photography
+
+Book:
+Book a Photography Session — Radiant Photography
+
+Use descriptive page titles and meta descriptions.
+
+---
+
+# VISUAL HIERARCHY RULE
+
+The most important rule:
+
+**PHOTOGRAPHY > TYPOGRAPHY > CONTENT > UI DECORATION**
+
+The images should get the most visual attention.
+
+Typography should guide the viewer.
+
+Content should support the story.
+
+UI decoration should be minimal.
+
+---
+
+# LUXURY DESIGN RULE
+
+Do NOT interpret "luxury" as:
+
+* Gold everywhere
+* Black everywhere
+* Huge glowing text
+* Excessive gradients
+* Fancy cursors
+* Excessive animations
+* Glassmorphism everywhere
+
+Instead interpret luxury as:
+
+**restraint + typography + spacing + photography + composition + motion**
+
+---
+
+# FINAL QUALITY BAR
+
+Before considering the website complete, verify:
+
+✓ Complete multi-page React website
+✓ Vite
+✓ JSX
+✓ JavaScript
+✓ Tailwind CSS
+✓ No TypeScript
+✓ No TSX
+✓ Responsive
+✓ Functional navigation
+✓ Functional portfolio filtering
+✓ Functional lightbox
+✓ Functional mobile menu
+✓ Functional booking form
+✓ Conditional wedding fields
+✓ Form validation
+✓ Success state
+✓ GSAP animations
+✓ GSAP ScrollTrigger
+✓ Motion interactions
+✓ Reduced-motion support
+✓ Accessible UI
+✓ Lazy-loaded images
+✓ Reusable components
+✓ Data-driven portfolio/services
+✓ Luxury typography hierarchy
+✓ Bezoria used selectively
+✓ Modern sans-serif used for functional content
+✓ Ivory/espresso/champagne luxury palette
+✓ Wedding service
+✓ Maternity service
+✓ Kids service
+✓ Models/Fashion service
+✓ Book Us page instead of Contact
+✓ Large editorial photography
+✓ No excessive cards
+✓ No excessive icons
+✓ No excessive gradients
+✓ No fake business claims
+✓ No unnecessary decorative effects
+
+Most importantly:
+
+**The result should look like a premium photography studio that could realistically charge for its services, not like a coding demo.**
+
+Build the complete experience now rather than stopping after the Home page.

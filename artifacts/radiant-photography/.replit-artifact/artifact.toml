@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Radiant Photography"
+description = "A premium multi-page photography studio website for Radiant Photography, featuring cinematic editorial storytelling, a filterable portfolio with lightbox, service pages, responsive navigation, and a validated Book Us inquiry flow."
+version = "1.0.0"
+id = "artifacts/radiant-photography"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 26187
+
+[services.development]
+run = "pnpm --filter @workspace/radiant-photography run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/radiant-photography", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/radiant-photography/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "26187"
+BASE_PATH = "/"
