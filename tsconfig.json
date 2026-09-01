@@ -1,6 +1,19 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compileOnSave": false,
-  "files": [],
-  "references": []
+  "extends": "../../tsconfig.base.json",
+  "include": ["src/**/*.jsx", "src/**/*.js"],
+  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
+  "compilerOptions": {
+    "noEmit": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    "checkJs": false,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "bundler",
+    "types": ["node", "vite/client"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
 }

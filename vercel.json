@@ -1,5 +1,0 @@
-{
-  "buildCommand": "pnpm run build",
-  "outputDirectory": "artifacts/radiant-photography/dist/public",
-  "framework": "vite"
-}
