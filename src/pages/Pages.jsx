@@ -15,16 +15,28 @@ function CinematicImage({ item, className = '', eager = false }) {
 
 function TestimonialCarousel({ items }) {
   const [index, setIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   
   useEffect(() => {
+    if (isHovered) return;
     const timer = setInterval(() => {
       setIndex((current) => (current + 1) % items.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, [items.length]);
+  }, [items.length, isHovered]);
+
+  const handleDragEnd = (e, { offset }) => {
+    const swipe = offset.x;
+    if (swipe < -40) setIndex((current) => (current + 1) % items.length);
+    else if (swipe > 40) setIndex((current) => (current - 1 + items.length) % items.length);
+  };
 
   return (
-    <div className="testimonial-carousel">
+    <div 
+      className="testimonial-carousel"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <span className="eyebrow">03 / Kind words</span>
       <div className="testimonial-viewport">
         <AnimatePresence>
@@ -35,6 +47,12 @@ function TestimonialCarousel({ items }) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -25 }}
             transition={{ duration: 0.85, ease: [0.2, 0.7, 0.2, 1] }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.7}
+            onDragEnd={handleDragEnd}
+            style={{ cursor: 'grab' }}
+            whileTap={{ cursor: 'grabbing' }}
           >
             <blockquote className="display">“{items[index].quote}”</blockquote>
             <p>{items[index].name} <span>— {items[index].detail}</span></p>
@@ -42,16 +60,20 @@ function TestimonialCarousel({ items }) {
         </AnimatePresence>
       </div>
       <div className="testimonial-pagination" role="tablist" aria-label="Testimonials">
-        {items.map((_, i) => (
-          <button
-            key={i}
-            role="tab"
-            aria-selected={i === index}
-            aria-label={`View testimonial ${i + 1}`}
-            className={`testimonial-dot ${i === index ? 'active' : ''}`}
-            onClick={() => setIndex(i)}
-          />
-        ))}
+        <button className="testimonial-arrow" onClick={() => setIndex((index - 1 + items.length) % items.length)} aria-label="Previous testimonial"><ArrowLeft size={16} /></button>
+        <div className="testimonial-dots">
+          {items.map((_, i) => (
+            <button
+              key={i}
+              role="tab"
+              aria-selected={i === index}
+              aria-label={`View testimonial ${i + 1}`}
+              className={`testimonial-dot ${i === index ? 'active' : ''}`}
+              onClick={() => setIndex(i)}
+            />
+          ))}
+        </div>
+        <button className="testimonial-arrow" onClick={() => setIndex((index + 1) % items.length)} aria-label="Next testimonial"><ArrowRight size={16} /></button>
       </div>
     </div>
   );

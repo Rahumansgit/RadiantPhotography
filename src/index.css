@@ -420,9 +420,12 @@ body { overflow-x: hidden; }
 .testimonial-slide blockquote { max-width: 950px; margin: 0 0 2.5rem; color: var(--champagne); font-size: clamp(2.5rem, 5.1vw, 5.4rem); line-height: .92; }
 .testimonial-slide p { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; }
 .testimonial-slide p span { color: var(--taupe); }
-.testimonial-pagination { display: flex; gap: 12px; align-items: center; }
-.testimonial-dot { width: 10px; height: 1px; background: rgba(232, 222, 208, 0.35); border: 0; padding: 10px 0; background-clip: content-box; cursor: pointer; transition: all 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
-.testimonial-dot.active { width: 42px; background-color: var(--gold); }
+.testimonial-pagination { display: flex; gap: 24px; align-items: center; }
+.testimonial-dots { display: flex; gap: 14px; align-items: center; }
+.testimonial-arrow { background: none; border: 1px solid rgba(232, 222, 208, 0.25); color: var(--champagne); width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; transition: all 0.3s ease; }
+.testimonial-arrow:hover { background: var(--champagne); color: var(--charcoal); }
+.testimonial-dot { width: 14px; height: 2px; background: rgba(232, 222, 208, 0.4); border: 0; padding: 12px 0; background-clip: content-box; cursor: pointer; transition: all 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.testimonial-dot.active { width: 48px; background-color: var(--gold); }
 .home-closing { padding: clamp(8rem, 16vw, 15rem) 0; }
 .home-closing > .reveal { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 8vw, 9rem); align-items: center; }
 .closing-image { height: min(56vw, 610px); }
