@@ -414,9 +414,15 @@ body { overflow-x: hidden; }
 .service-short { color: var(--taupe); font-size: .76rem; }
 .home-testimonial { padding: clamp(7rem, 14vw, 13rem) max(2rem, 15vw); background: var(--charcoal); color: var(--ivory); }
 .home-testimonial .eyebrow { color: var(--gold); }
-.home-testimonial blockquote { max-width: 950px; margin: 3rem 0 2.5rem; color: var(--champagne); font-size: clamp(2.5rem, 5.1vw, 5.4rem); line-height: .92; }
-.home-testimonial p { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; }
-.home-testimonial p span { color: var(--taupe); }
+.testimonial-carousel { display: flex; flex-direction: column; }
+.testimonial-viewport { display: grid; margin-top: 3rem; margin-bottom: 2.5rem; }
+.testimonial-slide { grid-area: 1 / 1; display: flex; flex-direction: column; justify-content: center; }
+.testimonial-slide blockquote { max-width: 950px; margin: 0 0 2.5rem; color: var(--champagne); font-size: clamp(2.5rem, 5.1vw, 5.4rem); line-height: .92; }
+.testimonial-slide p { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; }
+.testimonial-slide p span { color: var(--taupe); }
+.testimonial-pagination { display: flex; gap: 12px; align-items: center; }
+.testimonial-dot { width: 10px; height: 1px; background: rgba(232, 222, 208, 0.35); border: 0; padding: 10px 0; background-clip: content-box; cursor: pointer; transition: all 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.testimonial-dot.active { width: 42px; background-color: var(--gold); }
 .home-closing { padding: clamp(8rem, 16vw, 15rem) 0; }
 .home-closing > .reveal { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 8vw, 9rem); align-items: center; }
 .closing-image { height: min(56vw, 610px); }

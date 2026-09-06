@@ -13,6 +13,50 @@ function CinematicImage({ item, className = '', eager = false }) {
   return <div className={`photo-frame ${className}`}><img src={item.image} alt={item.alt} loading={eager ? 'eager' : 'lazy'} /></div>;
 }
 
+function TestimonialCarousel({ items }) {
+  const [index, setIndex] = useState(0);
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((current) => (current + 1) % items.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [items.length]);
+
+  return (
+    <div className="testimonial-carousel">
+      <span className="eyebrow">03 / Kind words</span>
+      <div className="testimonial-viewport">
+        <AnimatePresence>
+          <motion.div
+            key={index}
+            className="testimonial-slide"
+            initial={{ opacity: 0, x: 25 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -25 }}
+            transition={{ duration: 0.85, ease: [0.2, 0.7, 0.2, 1] }}
+          >
+            <blockquote className="display">“{items[index].quote}”</blockquote>
+            <p>{items[index].name} <span>— {items[index].detail}</span></p>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+      <div className="testimonial-pagination" role="tablist" aria-label="Testimonials">
+        {items.map((_, i) => (
+          <button
+            key={i}
+            role="tab"
+            aria-selected={i === index}
+            aria-label={`View testimonial ${i + 1}`}
+            className={`testimonial-dot ${i === index ? 'active' : ''}`}
+            onClick={() => setIndex(i)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Home() {
   usePageTitle('Bringing Colours to Life', 'Radiant Photography creates honest, artful photographs for weddings, families, maternity and fashion.');
   const heroRef = useRef(null);
@@ -47,7 +91,7 @@ export function Home() {
       <div className="service-list">{services.map((service, index) => <Reveal key={service.name} delay={index * 80}><Link href="/services" className="service-row"><span className="service-number">{service.number}</span><span className="service-name display">{service.name}</span><span className="service-short">{service.short}</span><ArrowUpRight size={18} strokeWidth={1.1} /></Link></Reveal>)}</div>
     </section>
     <section className="home-testimonial">
-      <Reveal><span className="eyebrow">03 / Kind words</span><blockquote className="display">“{testimonials[0].quote}”</blockquote><p>{testimonials[0].name} <span>— {testimonials[0].detail}</span></p></Reveal>
+      <Reveal><TestimonialCarousel items={testimonials} /></Reveal>
     </section>
     <section className="home-closing container-editorial"><Reveal><div className="closing-image"><CinematicImage item={portfolio[11]} /></div><div className="closing-copy"><span className="eyebrow">Let’s make something real</span><h2 className="display">Your story<br /><i>starts here.</i></h2><Link href="/book" className="dark-link">Make an enquiry <ArrowUpRight size={16} /></Link></div></Reveal></section>
   </PageLayout>;
