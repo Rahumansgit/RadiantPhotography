@@ -50,19 +50,21 @@ export function Header({ dark = false }) {
     return () => { document.body.style.overflow = ''; };
   }, [open]);
   return (
-    <header className={`site-header ${dark ? 'site-header-dark' : ''} ${scrolled ? 'site-header-scrolled' : ''}`}>
-      <div className="header-inner container-editorial">
-        <Link href="/" className="wordmark" aria-label="Radiant Photography home">
-          <span>Radiant</span><small>Photography</small>
-        </Link>
-        <nav className="desktop-nav" aria-label="Main navigation">
-          {navItems.map((item) => <Link key={item.href} href={item.href} className={`line-link ${location === item.href ? 'active' : ''}`} aria-current={location === item.href ? 'page' : undefined}>{item.label}</Link>)}
-          <Link href="/book" className="header-cta">Enquire <ArrowUpRight size={15} strokeWidth={1.5} /></Link>
-        </nav>
-        <button className="menu-toggle" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen((value) => !value)}>
-          {open ? <X size={23} strokeWidth={1.4} /> : <Menu size={23} strokeWidth={1.4} />}
-        </button>
-      </div>
+    <>
+      <header className={`site-header ${dark ? 'site-header-dark' : ''} ${scrolled ? 'site-header-scrolled' : ''} ${open ? 'menu-open' : ''}`}>
+        <div className="header-inner container-editorial">
+          <Link href="/" className="wordmark" aria-label="Radiant Photography home">
+            <span>Radiant</span><small>Photography</small>
+          </Link>
+          <nav className="desktop-nav" aria-label="Main navigation">
+            {navItems.map((item) => <Link key={item.href} href={item.href} className={`line-link ${location === item.href ? 'active' : ''}`} aria-current={location === item.href ? 'page' : undefined}>{item.label}</Link>)}
+            <Link href="/book" className="header-cta">Enquire <ArrowUpRight size={15} strokeWidth={1.5} /></Link>
+          </nav>
+          <button className="menu-toggle" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen((value) => !value)}>
+            {open ? <X size={23} strokeWidth={1.4} /> : <Menu size={23} strokeWidth={1.4} />}
+          </button>
+        </div>
+      </header>
       <AnimatePresence>
         {open && <motion.div className="mobile-menu" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: .28 }}>
           <p className="eyebrow">A little more Radiant</p>
@@ -73,7 +75,7 @@ export function Header({ dark = false }) {
           <div className="mobile-menu-foot"><span>70, Kalasth Nagar, 4th Cross Street · Fairlands, Salem</span></div>
         </motion.div>}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
 
