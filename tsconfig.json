@@ -1,6 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "include": ["src/**/*.jsx", "src/**/*.js"],
+  "include": ["src/**/*.jsx", "src/**/*.js", "src/**/*.tsx", "src/**/*.ts"],
   "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
   "compilerOptions": {
     "noEmit": true,
